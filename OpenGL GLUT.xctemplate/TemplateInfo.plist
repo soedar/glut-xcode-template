@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>sg.edu.nus.cs3241.openglGlut</string>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template builds a OpenGL/GLUT project.</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.base</string>
+		<string>com.apple.dt.unit.macBase</string>
+	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>ProductType</key>
+			<string>com.apple.product-type.tool</string>
+			<key>Frameworks</key>
+			<array>
+				<string>OpenGL</string>
+				<string>GLUT</string>
+			</array>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Class</key>
+					<string>Sources</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Frameworks</string>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>CopyFiles</string>
+					<key>DstPath</key>
+					<string>/usr/share/man/man1/</string>
+					<key>DstSubfolderSpec</key>
+					<string>0</string>
+					<key>RunOnlyForDeploymentPostprocessing</key>
+					<string>YES</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>commandLineType</string>
+			<key>Name</key>
+			<string>Type</string>
+			<key>Description</key>
+			<string>The type of command-line tool to create</string>
+			<key>Default</key>
+			<string>C</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Units</key>
+			<dict>
+				<key>C++</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>main.cpp:comments</string>
+						<string>main.cpp:include</string>
+						<string>main.cpp:displayfunc:content</string>
+						<string>main.cpp:main:content</string>
+						<string>___PACKAGENAMEASIDENTIFIER___.1</string>
+					</array>
+					<key>Definitions</key>
+					<dict>
+						<key>main.cpp:include</key>
+						<string>#include &lt;iostream&gt;
+#include &lt;GLUT/GLUT.h&gt;
+#include &lt;OpenGL/OpenGL.h&gt;
+</string>
+						<key>main.cpp:main:content</key>
+						<string>glutInit(&amp;argc, argv);
+glutCreateWindow(&quot;Hello, world&quot;);
+    
+glutDisplayFunc(displayFunc);
+glutMainLoop();</string>
+
+						<key>main.cpp:displayfunc:content</key>
+						<string>    glClear(GL_COLOR_BUFFER_BIT);
+    glBegin(GL_POLYGON);
+    glVertex2f(-0.5, -0.5);
+    glVertex2f(0, 0.5);
+    glVertex2f(0.5, -0.5);
+    glEnd();
+    glFlush();</string>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>___PACKAGENAMEASIDENTIFIER___.1</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAMEASIDENTIFIER___.1</string>
+		</dict>
+		<key>*:main</key>
+		<dict>
+			<key>Beginning</key>
+			<string>int main(int argc, char * argv[])
+{</string>
+			<key>End</key>
+			<string>    return 0;
+}
+</string>
+			<key>Indent</key>
+			<integer>1</integer>
+		</dict>
+		<key>*:displayfunc</key>
+		<dict>
+			<key>Beginning</key>
+			<string>void displayFunc()
+{</string>
+			<key>End</key>
+			<string>}
+</string>
+		</dict>
+
+		<key>*:*:importFoundation</key>
+		<string>#import &lt;Foundation/Foundation.h&gt;
+</string>
+	</dict>
+</dict>
+</plist>
